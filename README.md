@@ -4,7 +4,9 @@ A tool that uses ollama and whisper to evaluate speeches
 *IMPORTANT: INSTALL OLLAMA, WHISPER, and PYTHON BEFORE USING**
 
 Ollama: https://ollama.com/
-Whisper: https://github.com/openai/whisper?tab=readme-ov-file#setup  (Should just be running ``` pip install -U openai-whisper``` in a terminal winodw
+
+Whisper: https://github.com/openai/whisper?tab=readme-ov-file#setup  (Should just be running ``` pip install -U openai-whisper``` in a terminal window
+
 Python: https://www.python.org/downloads/
 
 After installing python
