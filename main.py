@@ -5,22 +5,14 @@ import whisper
 model = whisper.load_model("base")
 
 # Transcribe the audio file
-result = model.transcribe("speech4.wav")
+result = model.transcribe(input("Enter Speech File Path:"))
 
 # Extract the transcription text from the result
 transcription = result['text']
 
-# Print or save the transcription
+# Print the transcription
 print(transcription)
-prompt1="Should people who create AI be responsible for its impact on society?"
-prompt2="Should we worry more about AI taking jobs or the benefits it brings to our lives?"
-prompt3="When if at all should students be allowed to use AI in school?"
-
-
-# Save the transcription to a file or use it further in the code as needed
-# with open('transcription.txt', 'w') as f:
-#     f.write(transcription)
-
-
-response = ollama.generate(model='llama3.2', prompt="Please evaluate this speech on the prompt on a scale of 1-10: "+prompt1+" Here is the speech: "+ transcription+ " Base your scale on the flow of the speech and if it gives two solid resason arguing a clear and well explained thesis. Be harsh but reasonable. Also the ending of the speech is the opinions of other human reviewers that you should take into accpunt")
+prompt1=input("Enter prompt:")
+basis=" Base your scale on the flow of the speech and if it gives two solid reasons arguing a clear and well explained thesis. Be harsh but reasonable." # basis from grading
+response = ollama.generate(model='llama3.2', prompt="Please evaluate this speech on the prompt on a scale of 1-5: "+prompt1+" Here is the speech: "+ transcription+ bases)
 print(response["response"])
